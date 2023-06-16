@@ -32,6 +32,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import CustomInput from './src/components/CustomInput';
 import ButtonConponent from './src/components/ButtonComponet';
+import ForgotPassword from './src/components/ForgotPassword';
+import ListButton from './src/components/PropsAndCallback';
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -161,7 +163,7 @@ const onPressCard = ({title, price}: ItemProps) => {
 // Render sản phẩm và khi click vào hiển thị thông báo sp đó
 const RenderItem = ({title, price, image}: ItemProps) => (
   <TouchableOpacity style={styles.item} onPress={()=> onPressCard({ title, price, image })}>
-    <View >
+    <View>
     <Image
       source={image}
       style={styles.image}
@@ -185,6 +187,10 @@ function App(): JSX.Element {
         numColumns={2}
       />
      </View>
+    {/* <ForgotPassword>
+    <Text style={{color: 'white', fontSize: 14, fontWeight: '600'}}>Quên mật khẩu</Text>
+    </ForgotPassword> */}
+    <ListButton/>
     </SafeAreaView>
   );
 }
