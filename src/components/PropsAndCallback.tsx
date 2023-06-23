@@ -1,6 +1,6 @@
 import React from 'react';
 import {Alert, FlatList, View} from 'react-native';
-import ForgotPassword from './ForgotPassword';
+import ForgotPassword from './button2';
 
 const DATA = [
   {
@@ -15,24 +15,13 @@ const DATA = [
     textButon: 'red',
     backgroud: 'red',
   },
-  {
-    textButon: 'black',
-    backgroud: 'black',
-  },
-  {
-    textButon: 'black',
-    backgroud: 'black',
-  },
-  {
-    textButon: 'black',
-    backgroud: 'black',
-  },
+
 ];
 
 type ItemProps = {
   textButon: string;
   backgroud: string;
-  onPress: Function
+  onPress: (Function)
 };
 
 
@@ -53,3 +42,4 @@ const ListButton: React.FC = () => {
 };
 
 export default ListButton;
+  

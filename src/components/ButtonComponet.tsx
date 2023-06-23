@@ -15,15 +15,13 @@ const ButtonConponent: React.FC<ButtonConponentPros> = ({text,textTolorCode, onP
     return (
     <TouchableOpacity style={{backgroundColor: colorCode,
         alignItems: 'center',
-        padding: 8,
-        height: 50,
-        marginHorizontal: 20,
+        justifyContent: 'center',
+        height: 40,
         borderRadius: 30,
         }} onPress= {onPressButton}>
         <Text style={{color:textTolorCode,
         fontSize: 16,
         textAlign:'right',  
-        marginTop:4,
         fontWeight: '500',}}>{text}</Text>
     </TouchableOpacity>
 )

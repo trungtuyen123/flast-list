@@ -4,22 +4,23 @@ import {View, Text, TouchableOpacity, Alert} from 'react-native';
 type ForgotPasswordProps ={
  textButon: string,
  Backgroud: string,
- onPress: Function
-}
-const onPressButton = ({textButon, Backgroud}: ForgotPasswordProps) => {
-    Alert.alert(`tên Button: ${textButon}\nMã màu: ${Backgroud}`)
+ onPress:(text: string) => void
 }
 
 const ForgotPassword: React.FC <ForgotPasswordProps>= ({textButon, Backgroud, onPress}) => {
+  const handlePress= () => {
+    onPress(Backgroud)
+  }
+
   return (
-   <TouchableOpacity style={{marginBottom: 16}} onPress= {() => onPressButton ({textButon, Backgroud, onPress})}>
+   <TouchableOpacity  style={{  height: 50, }} onPress={handlePress}>
      <View
       style={{
         backgroundColor: Backgroud,
         alignItems: 'center', 
         padding: 8,
         height: 50,
-        marginHorizontal: 20,
+        
         borderRadius: 30,
         justifyContent: 'center'
       }}>

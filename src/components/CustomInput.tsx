@@ -4,14 +4,18 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-nativ
 type CustomInputProps = {
     label: string,
     textPlaceholder:string,
-    isEmail?: boolean
+    isEmail?: boolean,
+    onChangeText: (text: string) => void,
+    value: string,
+
 }
-const CustomInput:React.FC<CustomInputProps>= ({label,textPlaceholder, isEmail}) => {
+const CustomInput:React.FC<CustomInputProps>= ({label,textPlaceholder, isEmail, onChangeText, value}) => {
 
     return (
         <View style = {{ marginHorizontal: 20, marginBottom: 24}}>
         <Text style={styles.labelText}>{label}</Text>
-        <TextInput style={styles.textInput} placeholder={textPlaceholder}/>
+        <TextInput style={styles.textInput} placeholder={textPlaceholder}   onChangeText={onChangeText}
+        value={value}/>
 
         {
             isEmail && <TouchableOpacity>
