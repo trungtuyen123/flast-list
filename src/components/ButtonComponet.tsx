@@ -1,49 +1,42 @@
 import React from "react";
 import { TouchableOpacity,Text, Alert, StyleSheet } from "react-native";
+import { primaryColor, textColor } from "./color";
 
 type ButtonConponentPros = {
     text : string,
     textTolorCode: string,
-    colorCode:string,
+    backgroudColor:string,
     onPress:Function
+    border: string
 }
 
-const ButtonConponent: React.FC<ButtonConponentPros> = ({text,textTolorCode, onPress,colorCode}) => {
+const ButtonConponent: React.FC<ButtonConponentPros> = ({text,textTolorCode, onPress,backgroudColor,border}) => {
    const onPressButton = () => {
     onPress()
    }
     return (
-    <TouchableOpacity style={{backgroundColor: colorCode,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 40,
-        borderRadius: 30,
-        }} onPress= {onPressButton}>
-        <Text style={{color:textTolorCode,
-        fontSize: 16,
-        textAlign:'right',  
-        fontWeight: '500',}}>{text}</Text>
+    <TouchableOpacity style={styles.Button} onPress= {onPressButton}>
+        <Text style={styles.textButton}>{text}</Text>
     </TouchableOpacity>
 )
 }
 
 const styles = StyleSheet.create ({
     Button: {
-        backgroundColor: 'colorCode',
+        backgroundColor: textColor,
         alignItems: 'center',
-        padding: 8,
-        height: 50,
-        marginHorizontal: 20,
+        paddingHorizontal: 16,
+        paddingVertical: 8,
         borderRadius: 30,
-        // marginTop: 30
-        
+        borderColor:primaryColor      ,
+        borderWidth: 1,
+        width: 115,
+        justifyContent: 'center'
     },
     textButton: {
-        color: 'white',
+        color: primaryColor,
         fontSize: 16,
-        textAlign:'right',
-        marginTop:4,
-        fontWeight: '500',
+        fontWeight: '700',
     },
 })
 export default ButtonConponent;

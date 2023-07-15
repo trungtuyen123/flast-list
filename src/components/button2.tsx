@@ -1,26 +1,26 @@
-import React, { ReactNode } from 'react';
-import {View, Text, TouchableOpacity, Alert} from 'react-native';
+import React from 'react';
+import {View, Text, TouchableOpacity, Dimensions} from 'react-native';
 
-type ForgotPasswordProps ={
+const {width, height } = Dimensions.get('window')
+type button2Props ={
  textButon: string,
  Backgroud: string,
  onPress:(text: string) => void
 }
 
-const ForgotPassword: React.FC <ForgotPasswordProps>= ({textButon, Backgroud, onPress}) => {
+const button2: React.FC <button2Props>= ({textButon, Backgroud, onPress}) => {
   const handlePress= () => {
-    onPress(Backgroud)
+    onPress('')
   }
 
   return (
-   <TouchableOpacity  style={{  height: 50, }} onPress={handlePress}>
+   <TouchableOpacity  style={{width: width*0.9 ,height: 50, }} onPress={handlePress}>
      <View
       style={{
         backgroundColor: Backgroud,
         alignItems: 'center', 
         padding: 8,
         height: 50,
-        
         borderRadius: 30,
         justifyContent: 'center'
       }}>
@@ -30,4 +30,4 @@ const ForgotPassword: React.FC <ForgotPasswordProps>= ({textButon, Backgroud, on
   );
 };
 
-export default ForgotPassword;
+export default button2;

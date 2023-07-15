@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
+import MenuBottom from '../../components/MenuBottom';
 
 interface LoginProps {
   onLogin: (username: string, password: string) => void;
@@ -29,7 +30,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         value={password}
         onChangeText={text => setPassword(text)}
       />
-      <Button title="Login" onPress={handleLogin} />
+      <MenuBottom/>
     </View>
   );
 };
